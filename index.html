@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/responvise.css">
     <link rel="stylesheet" href="./assets/font-icon/fontawesome-free-6.1.2-web/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
@@ -17,8 +19,8 @@
 <body>
     <div class="app">
         <header class="header">
-            <div class="grid">
-                <nav class="header__navbar">
+            <div class="grid wide">
+                <nav class="header__navbar hide-on-mobile-tablet">
                     <ul class="header__navbar-list">
 
                         <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate">
@@ -135,7 +137,11 @@
 
                 <!-- heder-with-search -->
                 <div class="heder-with-search">
-                    <div class="header__logo">
+                    <label for="mobile-search-checkbox" class="header__mobile-search">
+                        <i class="header__mobile-search-icon fa-solid fa-magnifying-glass"></i>
+                    </label>
+
+                    <div class="header__logo hide-on-tablet">
                         <a href="/" class="header__logo-link">
                             <svg class="header__logo-img" viewBox="0 0 192 65">
                                 <g fill-rule="evenodd">
@@ -146,6 +152,8 @@
                             </svg>
                         </a>
                     </div>
+
+                    <input type="checkbox" hidden id="mobile-search-checkbox" class="header__search-checkbox">
 
                     <div class="header__search">
                         <div class="header__search-input-wrap">
@@ -283,12 +291,30 @@
                     </div>
                 </div>
             </div>
+
+            <ul class="header__sort-bar">
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Liên quan</a>
+                </li>
+                
+                <li class="header__sort-item header__sort-item--active">
+                    <a href="" class="header__sort-link">Mới nhất</a>
+                </li>
+                
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Bán chạy</a>
+                </li>
+                
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Giá</a>
+                </li>
+            </ul>
         </header>
 
         <div class="app__container">
-            <div class="grid">
-                <div class="grid__row app__content">
-                    <div class="grid__column-2">
+            <div class="grid wide">
+                <div class="row sm-gutter app__content">
+                    <div class="col l-2 m-0 c-0">
                         <nav class="category">
                             <h3 class="category__heading">Danh mục</h3>
             
@@ -306,8 +332,8 @@
                         </nav>
                     </div>
     
-                    <div class="grid__column-10">
-                        <div class="home-filter">
+                    <div class="col l-10 m-12 c-12">
+                        <div class="home-filter hide-on-mobile-tablet">
                             <span class="home-filter__label">Sắp xếp theo</span>
                             <button class="home-filter__btn btn">Phổ biến</button>
                             <button class="home-filter__btn btn btn--primary">Mới nhất</button>
@@ -346,10 +372,63 @@
                             </div>
                         </div>
 
+                        <nav class="mobile-category">
+                            <ul class="mobile-category__list">
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+
                         <div class="home-product">
-                            <div class="grid__row">
+                            <div class="row sm-gutter">
                                 <!-- product item -->
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/10a3751ed93401fe4e3f14b199d2e81e_tn) ;"></div>
                                         <h4 class="home-product-item__name">Chân Váy Tầng Xếp Ly Xòe Dáng Ngắn 2 Tầng Lưng Cạp Cao RYSO Kèm video sp + Ảnh</h4>
@@ -391,7 +470,7 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/d6ab398113e93de2eb669fe6050b76c4_tn) ;"></div>
                                         <h4 class="home-product-item__name">Cosplay Hầu Gái Nhật Bản Sexy - Bộ Đồ Ngủ Cô Giúp Việc Quyến Rũ Gợi Cảm - CPL01-Chubby.Sexy</h4>
@@ -433,7 +512,7 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/sg-11134201-22100-p4wgr06vvmiv0e_tn) ;"></div>
                                         <h4 class="home-product-item__name">[204] Váy Nhung Cổ Nơ Pha Bèo Trắng Tiểu Thư Siêu Xinh</h4>
@@ -475,7 +554,7 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/5d64bb5c2fcf51a954dc1967b4797361_tn) ;"></div>
                                         <h4 class="home-product-item__name">Quần short nữ ống rộng lưng cao gập gấu chất tuyết mưa màu đen màu trắng quần đùi ống loe nữ cạp cao 23thang9 boutique</h4>
@@ -517,7 +596,7 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/sg-11134201-22110-syvvvqpzqkjv0c_tn) ;"></div>
                                         <h4 class="home-product-item__name">Áo Croptop Polo Có Cổ Ngắn Tay Nữ Madela; Croptop Polo Nữ Dáng Ôm Có Cổ Ngắn Tay</h4>
@@ -559,7 +638,7 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/23a2c359596f25af044af65a97b4a4e9_tn) ;"></div>
                                         <h4 class="home-product-item__name">Cosplay học sinh Nhật Bản sexy xuyên thấu tặng tất trắng hoặc đen như trong hình đồ ngủ hóa trang học sinh anime</h4>
@@ -601,7 +680,7 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/844a72eab01f78694bd1056aabd66381_tn) ;"></div>
                                         <h4 class="home-product-item__name">Bodysuit ôm sát cơ thể rỗng đáy in hình Anime dễ thương - Cosplay Anime</h4>
@@ -643,7 +722,7 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/05ee0a5912be68d0dd2bef3476b33508_tn) ;"></div>
                                         <h4 class="home-product-item__name">SET ĐỒ COSPLAY HẦU GÁI ANIME SEXY CAO CẤP, ĐẦY ĐỦ PHỤ KIỆN ( HÀNG QUẢNG CHÂU CAO CẤP )</h4>
@@ -685,7 +764,7 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/ead1984cddfffc8e954262bb40cd209e_tn) ;"></div>
                                         <h4 class="home-product-item__name">Đồ ngủ cosplay nữ sinh Nhật Bản - Set váy ngủ cosplay gơi cảm sexy anime KALI SEXY</h4>
@@ -727,7 +806,7 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/sg-11134201-22110-xx279m95lxjv0c_tn) ;"></div>
                                         <h4 class="home-product-item__name">Áo Cosplay Sexy Hầu Gái Xinh Xắn , Áo Ngủ Liền Quần Anime 2 Dây Gợi Cảm #Bdsm Đồ Ngủ #Cosplaysexy</h4>
@@ -818,9 +897,9 @@
         </div>
 
         <footer class="footer">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__column-2-4">
+            <div class="grid wide">
+                <div class="row footer__content">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Chăm sóc khách hàng</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -835,7 +914,7 @@
                         </ul>
                     </div>
 
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Giới thiệu</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -850,12 +929,12 @@
                         </ul>
                     </div>
 
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Danh mục</h3>
                         
                     </div>
 
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Theo dõi chúng tôi</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -882,7 +961,7 @@
                         </ul>
                     </div>
 
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-8 c-12">
                         <h3 class="footer__heading">Vào cửa hàng trong ứng dụng</h3>
                         <div class="footer__download">
                             <img src="./assets/img/QR.png" alt="download QR" class="footer__download-qr">
@@ -902,7 +981,7 @@
             </div>
 
             <div class="footer__bottom">
-                <div class="grid">
+                <div class="grid wide">
                     <p class="footer__text" >&copy 2022 - Bản quyền thuộc về Công ty TB-Shop</p>
                 </div>
             </div>
